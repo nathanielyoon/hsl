@@ -45,7 +45,7 @@ export default function Root() {
         <Suspense>
           <ErrorBoundary>
             <main>
-              <h1 style={{background: color(hsl()), color: color({hue: hsl().hue > 180 ? hsl().hue - 180 : hsl().hue + 180, saturation: 100, lightness: 50, opacity: 100})}}>HSL</h1>
+              <h1 style={{background: color(hsl())}}>HSL</h1>
               <section>
                 <Picker type="hue" max={360}/>
                 <Picker type="saturation"/>
