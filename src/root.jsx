@@ -1,6 +1,6 @@
 // @refresh reload
 import {Suspense, createSignal, For, children, createEffect} from "solid-js";
-import {A, Body, ErrorBoundary, Head, Html, Meta, Scripts, Title} from "solid-start";
+import {A, Body, ErrorBoundary, Head, Html, Meta, Scripts, Title, Link} from "solid-start";
 
 import "./root.sass";
 
@@ -39,11 +39,13 @@ export default function Root() {
         <Title>HSL</Title>
         <Meta charset="utf-8"/>
         <Meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <Link rel="icon" href="favicon.svg"/>
       </Head>
       <Body>
         <Suspense>
           <ErrorBoundary>
             <main>
+              <h1 style={{background: color(hsl()), color: color({hue: hsl().hue > 180 ? hsl().hue - 180 : hsl().hue + 180, saturation: 100, lightness: 50, opacity: 100})}}>HSL</h1>
               <section>
                 <Picker type="hue" max={360}/>
                 <Picker type="saturation"/>
@@ -54,7 +56,7 @@ export default function Root() {
                 <Display>
                   <button style="color: black">Button</button>
                   <button style="color: white">Button</button>
-                  <input/>
+                  <input placeholder="placeholder"/>
                   <input type="submit"/>
                 </Display>
               </section>

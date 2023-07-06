@@ -9,6 +9,7 @@
   "devDependencies": {
     "esbuild": "^0.14.54",
     "postcss": "^8.4.21",
+    "solid-start-cloudflare-pages": "^0.2.26",
     "solid-start-node": "^0.2.19",
     "vite": "^4.1.4"
   },
