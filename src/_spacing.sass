@@ -1,0 +1,30 @@
+$small: 32rem
+$large: 64rem
+
+@mixin layout
+  margin: 0.5rem 0.125rem
+  @media only screen and (min-width: $small)
+    margin: 0.75rem 0.25rem
+  @media only screen and (min-width: $large)
+    margin: 1.5rem 0.75rem
+
+@mixin section
+  margin: 0.5rem 0
+  @media only screen and (min-width: $small)
+    margin: 0.75rem 0rem
+  @media only screen and (min-width: $large)
+    margin: 1.5rem 0rem
+
+@mixin group
+  margin: 0.25rem 0
+  @media only screen and (min-width: $small)
+    margin: 0.375rem 0rem
+  @media only screen and (min-width: $large)
+    margin: 0.75rem 0rem
+
+@mixin part
+  margin: 0.0625rem 0
+  @media only screen and (min-width: $small)
+    margin: 0.125rem 0rem
+  @media only screen and (min-width: $large)
+    margin: 0.1875rem 0rem

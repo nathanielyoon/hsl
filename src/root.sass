@@ -1,0 +1,50 @@
+@use "base"
+@use "spacing"
+
+main
+  @include spacing.layout
+section
+  @include spacing.section
+
+input:not([type=submit]), textarea, select, button
+  font: inherit
+  padding: 0.0625em 0.25em
+  border: 1px solid black
+button, input[type=submit]
+  cursor: pointer
+  font: inherit
+  padding: 0.0625em 0.25em
+  border: 1px solid black
+input[type=number]
+  width: 2.5em
+input[type=range]
+  -webkit-appearance: none
+  appearance: none
+  background: transparent
+  cursor: pointer
+  padding: 0
+  width: 100%
+  &::-webkit-slider-runnable-track
+    height: 1rem
+  &::-webkit-slider-thumb
+    -webkit-appearance: none
+    height: 2rem
+    width: 0.5rem
+    background: white
+    border: 1px solid black
+    margin-top: -0.5rem
+div
+  @include spacing.group
+  display: flex
+  align-items: center
+  column-gap: 0.5rem
+  label
+    width: 6em
+  span
+    width: 2.5em
+
+article
+  *
+    @include spacing.group
+    display: block
+    background: hsl(0 100% 75% / 1)
