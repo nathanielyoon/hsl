@@ -5,6 +5,9 @@ main
   @include spacing.layout
 section
   @include spacing.section
+  display: flex
+  align-items: center
+  flex-direction: column
 h1
   height: 4rem
   display: flex
@@ -27,7 +30,7 @@ input[type=range]
   background: transparent
   cursor: pointer
   padding: 0
-  width: 100%
+  flex-grow: 1
   &::-webkit-slider-runnable-track
     height: 1rem
   &::-webkit-slider-thumb
@@ -37,18 +40,40 @@ input[type=range]
     background: white
     border: 1px solid black
     margin-top: -0.5rem
-div
+div[role=group]
   @include spacing.group
   display: flex
   align-items: center
   column-gap: 0.5rem
+  width: 100%
   label
-    width: 6em
+    width: 5.5em
   span
     width: 2.5em
-
+  &#controls
+    label
+      width: 7em
+      display: flex
+      column-gap: 0.5em
+      align-items: center
+  &#paths
+    width: 100%
+    flex-direction: column
+    *
+      display: flex
+      align-items: center
+    div
+      column-gap: 0.5rem
+      width: 100%
+    input
+      flex-grow: 1
 article
+  width: 100%
   *
-    @include spacing.group
     display: block
-    background: hsl(0 100% 75% / 1)
+    @include spacing.group
+svg
+  text
+    font-size: 0.5px
+    font-family: sans-serif
+    stroke-width: 0.05
